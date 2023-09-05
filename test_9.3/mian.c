@@ -1,45 +1,82 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 
-
-
-//三角形判断
-int is_angle(int a, int b, int c)
-{
-	if ((a + b > c) && (a + c > b) && (b + c > a))
-		return 1;
-}
+//1!+2!+...+n!
 int main()
 {
-	int a = 0;
-	int b = 0;
-	int c = 0;
-	while (scanf("%d%d%d", &a, &b, &c) == 3)
+	//1 2 6 24 120
+	int n = 0;
+	scanf("%d", &n);
+	int j = 0;
+	int ret = 1;
+	int i = 0;
+	int sum = 0;
+	for (i = 1; i <= n; i++)
 	{
-		if (is_angle(a,b,c) == 1)
+		/*for (j = 1; j <= i; j++)
 		{
-			if ((a == b) && (a == c))
-			{
-				printf("是等边三角形\n");
-			}
-			else if (((a == b) && (a != c)) || ((a == c) && (a != b))
-				|| ((b == c) && (b != a)))
-			{
-				printf("是等腰三角形\n");
-			}
-			else
-			{
-				printf("是普通三角形\n");
-			}
-		}
-		else
-		{
-			printf("不是三角形\n");
-		}
-
+			ret *= j;
+		}*/
+		ret *= i;
+		sum += ret;
 	}
+	//计算n!
+	
+	printf("%d\n", sum);
 	return 0;
 }
+
+
+//void test(int a[])
+//{
+//	//
+//}
+//int main()
+//{
+//	int arr[10] = { 1,2,3,4,5,6,7,8,9,10 };
+//	test(arr);
+//	return 0;
+//}
+
+//三角形判断
+//int is_angle(int a, int b, int c)
+//{
+//	if ((a + b > c) && (a + c > b) && (b + c > a))
+//		return 1;
+//}
+//int main()
+//{
+//	int a = 0;
+//	int b = 0;
+//	int c = 0;
+//	while (scanf("%d%d%d", &a, &b, &c) == 3)
+//	{
+//		if (is_angle(a,b,c) == 1)
+//		{
+//			if ((a == b) && (a == c))
+//			{
+//				printf("是等边三角形\n");
+//			}
+//			else if (((a == b) && (a != c)) || ((a == c) && (a != b))
+//				|| ((b == c) && (b != a)))
+//			{
+//				printf("是等腰三角形\n");
+//			}
+//			else
+//			{
+//				printf("是普通三角形\n");
+//			}
+//		}
+//		else
+//		{
+//			printf("不是三角形\n");
+//		}
+//
+//	}
+//	return 0;
+//}
+
+
 //int leap_year(int y)
 //{
 //	return(((y % 4 == 0) && (y % 100 != 0)) || (y % 400 == 0));
